@@ -10,9 +10,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.distributedtictactoe" />
-                  <option name="mobileSdkAppId" value="1:558845067745:android:1bfeee408102cc47ca52a0" />
-                  <option name="projectId" value="distributedtictactoe-fdf51" />
-                  <option name="projectNumber" value="558845067745" />
+                  <option name="mobileSdkAppId" value="1:283327351243:android:45ad7742cae182ed228e4e" />
+                  <option name="projectId" value="tictactoe-7b0de" />
+                  <option name="projectNumber" value="283327351243" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        database = FirebaseDatabase.getInstance().reference.child("games")
+        database = FirebaseDatabase.getInstance().reference
 
         amb.btnCreate.setOnClickListener{
             createGame()
@@ -38,12 +38,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createGame(){
-        val game = Game()
-        val newGame = database.push().key ?: ""
-        database.child(newGame).setValue(game).addOnCompleteListener{
-            if(it.isSuccessful){
-                Toast.makeText(this, "ID: $newGame", Toast.LENGTH_SHORT).show()
+        val game = database.child("games").push()
+        game.setValue(Game())
+
+        val id = game.key
+        if(id != null){
+
+            val intent = Intent(this@MainActivity, GameActivity::class.java).apply {
+                putExtra("id", id)
             }
+            startActivity(intent)
         }
     }
 
@@ -67,14 +71,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun enterGame(gameId: String) {
-        database.child(gameId).get().addOnSuccessListener { snapshot ->
-            if (snapshot.exists()) {
-                val intent = Intent(this, GameActivity::class.java)
-                intent.putExtra("gameId", gameId)
-                intent.putExtra("player", "jogadorO")
+        database.child("games").child(gameId).get().addOnSuccessListener {
+            if (it.exists()) {
+                val intent = Intent(this, GameActivity::class.java).apply {
+                    putExtra("GAME_ID", gameId)
+                }
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Game ID not found", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Game ID does not exist", Toast.LENGTH_SHORT).show()
             }
         }
     }
