@@ -16,6 +16,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:id="@+id/tvGameId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game ID:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarIn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/btnCopyGameId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copy ID"
+        app:layout_constraintTop_toBottomOf="@id/tvGameId"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:padding="8dp" />
+
     <GridLayout
         android:id="@+id/gameGrid"
         android:layout_width="300dp"
@@ -26,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="170dp">
+        android:layout_marginTop="190dp">
 
         <Button
             android:id="@+id/button00"
