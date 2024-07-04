@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         amb.btnEnter.setOnClickListener{
-            showEnterGameDialog()
+            popupEnterGame()
         }
     }
 
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showEnterGameDialog() {
+    private fun popupEnterGame() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Enter Game ID")
 
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         database.child("games").child(gameId).get().addOnSuccessListener {
             if (it.exists()) {
                 val intent = Intent(this, GameActivity::class.java).apply {
-                    putExtra("GAME_ID", gameId)
+                    putExtra("id", gameId)
                 }
                 startActivity(intent)
             } else {
