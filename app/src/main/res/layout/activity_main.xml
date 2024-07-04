@@ -28,7 +28,7 @@
         android:src="@drawable/logo" />
 
     <Button
-        android:id="@+id/btnTwoPlayers"
+        android:id="@+id/btnCreate"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -42,7 +42,7 @@
         />
 
     <Button
-        android:id="@+id/btnThreePlayers"
+        android:id="@+id/btnEnter"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -51,7 +51,7 @@
         android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnTwoPlayers"
+        app:layout_constraintTop_toBottomOf="@id/btnCreate"
         android:textColor="@color/black"
         />
 

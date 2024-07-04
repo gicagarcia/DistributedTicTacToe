@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.distributedtictactoe.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity() {
-    private lateinit var gab: ActivityGameBinding
+    private val gab: ActivityGameBinding by lazy{
+        ActivityGameBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -10,7 +10,7 @@
     app:subtitleTextColor="@color/design_default_color_on_primary">
 
     <ImageButton
-        android:id="@+id/add_button"
+        android:id="@+id/exit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
